@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p></p>
+    <div class="card">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                {% if product.image %}
+                <img src="{{ product.image }}" class="card-img">
+                {% else %}
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930" class="card-img">
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <h6 class="card-title">{{ product.category }}</h6>
+                    <h6 class="card-title">{{ product.cost }}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -17,6 +17,6 @@ def p_add_view(request: WSGIRequest):
     return redirect('product_detail', pk=product.pk)
 
 
-def detailed_view(request, pk):
+def p_detailed_view(request, pk):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'product.html', context={'product': product})
