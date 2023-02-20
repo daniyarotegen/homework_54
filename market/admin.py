@@ -1,21 +1,18 @@
 from django.contrib import admin
-
-from market.models import Category, Product
+from .models import Category, Product
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'description')
-    list_filter = ('id', 'name', 'description')
-    search_fields = ('id', 'name', 'description')
-    fields = ('id', 'name', 'description')
+    list_display = ('name', 'description')
+    search_fields = ('name', 'description')
+    ordering = ('name',)
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'category', 'added_datetime', 'cost')
-    list_filter = ('id', 'name', 'category')
-    search_fields = ('id', 'name', 'description')
-    readonly_fields = ('id', 'added_datetime')
-    fields = ('id', 'name', 'category', 'added_datetime', 'cost')
+    list_display = ('name', 'category', 'cost', 'added_datetime')
+    search_fields = ('name', 'category__name')
+    list_filter = ('category',)
+    ordering = ('-added_datetime',)
 
 
 admin.site.register(Category, CategoryAdmin)
