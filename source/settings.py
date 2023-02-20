@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'source.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lesson_54_hw',
+        'USER': 'macbookair',
+        'PASSWORD': '618396',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
