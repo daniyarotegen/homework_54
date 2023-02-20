@@ -3,10 +3,19 @@
     Home
 {% endblock %}
 {% block content %}
-<h1>My market</h1>
-    {% for product in products %}
-        <h2>{{ product.name }}</h2>
-        <h3>{{ product.category }}</h3>
-        <h2>{{ product.cost }}</h2>
-    {% endfor %}
+    <p></p>
+    <h2>My market</h2>
+    <p></p>
+    <div class="card-group">
+        {% for product in products %}
+            <div class="card">
+                <img class="card-img-top" src="{{ product.image }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.category }}</p>
+                    <p class="card-text">{{ product.cost }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
