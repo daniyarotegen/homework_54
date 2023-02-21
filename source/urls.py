@@ -15,19 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from market.views.categories import c_add_view, c_index_view, update_view, delete_category
+from market.views.categories import add_category, update_category, delete_category, view_category
 from market.views.index import index_view
-from market.views.products import p_add_view, p_detailed_view, p_update_view, delete_product
+from market.views.products import add_product, view_product, delete_product, update_product
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", index_view, name='index'),
-    path("product/add/", p_add_view, name='product_add'),
-    path("category/add/", c_add_view, name='category_add'),
-    path('product/<int:pk>', p_detailed_view, name='product_detail'),
-    path('categories/', c_index_view, name='categories'),
-    path('category/<int:pk>/update/', update_view, name='category_update'),
-    path('product/<int:pk>/update/', p_update_view, name='product_update'),
+    path("product/add/", add_product, name='product_add'),
+    path("category/add/", add_category, name='category_add'),
+    path('product/<int:pk>', view_product, name='product_detail'),
+    path('categories/', view_category, name='categories'),
+    path('category/<int:pk>/update/', update_category, name='category_update'),
+    path('product/<int:pk>/update/', update_product, name='product_update'),
     path('category/<int:pk>/delete/', delete_category, name='category_delete'),
     path('product/<int:pk>/delete/', delete_product, name='product_delete'),
 ]

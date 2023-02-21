@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from market.models import Product, Category
 
 
-def p_add_view(request: WSGIRequest):
+def add_product(request: WSGIRequest):
     categories = Category.objects.all()
     if request.method == 'GET':
         return render(request, 'product_create.html', {'categories': categories})
@@ -17,12 +17,12 @@ def p_add_view(request: WSGIRequest):
     return redirect('product_detail', pk=product.pk)
 
 
-def p_detailed_view(request, pk):
+def view_product(request, pk):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'product.html', context={'product': product})
 
 
-def p_update_view(request: WSGIRequest, pk):
+def update_product(request: WSGIRequest, pk):
     product = get_object_or_404(Product, pk=pk)
     categories = Category.objects.all()
     if request.method == 'GET':

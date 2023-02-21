@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from market.models import Category
 
 
-def c_add_view(request: WSGIRequest):
+def add_category(request: WSGIRequest):
     if request.method == 'GET':
         return render(request, 'category_create.html')
     category_data = {
@@ -14,7 +14,7 @@ def c_add_view(request: WSGIRequest):
     return redirect('categories')
 
 
-def c_index_view(request: WSGIRequest):
+def view_category(request: WSGIRequest):
     categories = Category.objects.all()
     context = {
         'categories': categories
@@ -22,7 +22,7 @@ def c_index_view(request: WSGIRequest):
     return render(request, 'categories.html', context=context)
 
 
-def update_view(request: WSGIRequest, pk):
+def update_category(request: WSGIRequest, pk):
     category = get_object_or_404(Category, pk=pk)
     if request.method == 'GET':
         return render(request, 'category_update.html', context={'category': category})

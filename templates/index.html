@@ -6,21 +6,23 @@
     <p></p>
     <h2>My market</h2>
     <p></p>
-    <div class="card-group row">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for product in products %}
-            <div class="card col-3">
-                <p></p>
-                {% if product.image %}
-                    <img class="img-thumbnail" src="{{ product.image }}">
-                {% else %}
-                    <img class="img-thumbnail"
-                         src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930">
-                {% endif %}
-                <div class="card-body">
-                    <h4 class="card-title">{{ product.name }}</h4>
-                    <h5 class="card-text">{{ product.category }}</h5>
-                    <h6 class="card-text">Price: {{ product.cost }}$</h6>
-                    <a href="{% url 'product_detail' product.pk %}">More...</a>
+            <div class="col">
+                <div class="card">
+                    {% if product.image %}
+                        <img class="img-thumbnail" src="{{ product.image }}" style="height: 20rem; object-fit:contain">
+                    {% else %}
+                        <img class="img-thumbnail"
+                             src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg?20200913095930"
+                             style="height: 20rem; object-fit:contain">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <h6 class="card-title">{{ product.category }}</h6>
+                        <h6 class="card-title">{{ product.cost }}</h6>
+                        <a href="{% url 'product_detail' product.pk %}">More...</a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
