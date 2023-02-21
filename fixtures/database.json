@@ -1,0 +1,122 @@
+[
+{
+  "model": "market.category",
+  "pk": 1,
+  "fields": {
+    "name": "Fruits",
+    "description": null
+  }
+},
+{
+  "model": "market.category",
+  "pk": 2,
+  "fields": {
+    "name": "Vegetables",
+    "description": ""
+  }
+},
+{
+  "model": "market.category",
+  "pk": 3,
+  "fields": {
+    "name": "Dairy",
+    "description": "Dairy products such as milk, cheese "
+  }
+},
+{
+  "model": "market.category",
+  "pk": 5,
+  "fields": {
+    "name": "Soft drinks",
+    "description": "All kinds of soda"
+  }
+},
+{
+  "model": "market.category",
+  "pk": 6,
+  "fields": {
+    "name": "Alcohol drinks",
+    "description": "Liquors"
+  }
+},
+{
+  "model": "market.category",
+  "pk": 7,
+  "fields": {
+    "name": "Meat",
+    "description": "All types of meat except for chicken"
+  }
+},
+{
+  "model": "market.product",
+  "pk": 2,
+  "fields": {
+    "name": "Tomato",
+    "description": "",
+    "category": 2,
+    "added_datetime": "2023-02-20T15:32:40.808Z",
+    "cost": "800.00",
+    "image": ""
+  }
+},
+{
+  "model": "market.product",
+  "pk": 3,
+  "fields": {
+    "name": "Banana",
+    "description": "Banana is a fruit",
+    "category": 1,
+    "added_datetime": "2023-02-20T18:46:56.166Z",
+    "cost": "500.00",
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2017/01/Bunch-of-bananas-67e91d5.jpg?quality=90&resize=440,400"
+  }
+},
+{
+  "model": "market.product",
+  "pk": 4,
+  "fields": {
+    "name": "Carrot",
+    "description": "Carrot is a type of vegetable",
+    "category": 2,
+    "added_datetime": "2023-02-20T18:54:31.031Z",
+    "cost": "100.00",
+    "image": "https://www.halfyourplate.ca/wp-content/uploads/2022/07/CarrotsWebsite.jpg"
+  }
+},
+{
+  "model": "market.product",
+  "pk": 5,
+  "fields": {
+    "name": "Coca Cola",
+    "description": "",
+    "category": 5,
+    "added_datetime": "2023-02-21T06:51:50.808Z",
+    "cost": "50.00",
+    "image": "https://socratesdistributors.com.au/wp-content/uploads/2022/10/CK39CC-2-1.jpg"
+  }
+},
+{
+  "model": "market.product",
+  "pk": 6,
+  "fields": {
+    "name": "Pinapple",
+    "description": "",
+    "category": 1,
+    "added_datetime": "2023-02-21T06:52:29.841Z",
+    "cost": "250.00",
+    "image": "https://thumbs.dreamstime.com/b/pinapple-fruit-499265.jpg"
+  }
+},
+{
+  "model": "market.product",
+  "pk": 7,
+  "fields": {
+    "name": "Water bottle",
+    "description": "",
+    "category": 5,
+    "added_datetime": "2023-02-21T06:53:15.262Z",
+    "cost": "20.00",
+    "image": "https://i5.walmartimages.com/asr/c64fe48e-d6c0-48cf-80d5-a647d0db641a_1.ad40a19cda58afb1c7baaf016423f67b.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"
+  }
+}
+]
