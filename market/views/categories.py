@@ -20,3 +20,13 @@ def c_index_view(request: WSGIRequest):
         'categories': categories
     }
     return render(request, 'categories.html', context=context)
+
+
+def update_view(request: WSGIRequest, pk):
+    category = get_object_or_404(Category, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'category_update.html', context={'category': category})
+    category.name = request.POST.get('name')
+    category.description = request.POST.get('description')
+    category.save()
+    return redirect('categories')

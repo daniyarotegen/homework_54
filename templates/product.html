@@ -16,6 +16,7 @@
                     <p class="card-text">{{ product.description }}</p>
                     <h6 class="card-title">{{ product.category }}</h6>
                     <h6 class="card-title">{{ product.cost }}</h6>
+                    <a href="{% url 'product_update' pk=product.pk %}"><button type="submit" class="btn btn-primary">Edit</button></a>
                 </div>
             </div>
         </div>

@@ -20,3 +20,18 @@ def p_add_view(request: WSGIRequest):
 def p_detailed_view(request, pk):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'product.html', context={'product': product})
+
+
+def p_update_view(request: WSGIRequest, pk):
+    product = get_object_or_404(Product, pk=pk)
+    categories = Category.objects.all()
+    if request.method == 'GET':
+        return render(request, 'product_update.html', context={'product': product, 'categories': categories})
+    product.name = request.POST.get('name')
+    product.description = request.POST.get('description')
+    category_id = request.POST.get('category')
+    product.category = Category.objects.get(pk=category_id)
+    product.cost = request.POST.get('cost')
+    product.image = request.POST.get('image')
+    product.save()
+    return redirect('product_detail', pk=product.pk)
