@@ -30,3 +30,14 @@ def update_view(request: WSGIRequest, pk):
     category.description = request.POST.get('description')
     category.save()
     return redirect('categories')
+
+
+def delete_category(request, pk):
+    category = get_object_or_404(Category, pk=pk)
+    if request.method == 'POST':
+        category.delete()
+        return redirect('categories')
+    context = {
+        'category': category,
+    }
+    return render(request, 'delete_category.html', context)

@@ -17,6 +17,7 @@
                     <h6 class="card-title">{{ product.category }}</h6>
                     <h6 class="card-title">{{ product.cost }}</h6>
                     <a href="{% url 'product_update' pk=product.pk %}"><button type="submit" class="btn btn-primary">Edit</button></a>
+                    <a href="{% url 'product_delete' pk=product.pk %}"><button type="submit" class="btn btn-primary">Delete</button></a>
                 </div>
             </div>
         </div>

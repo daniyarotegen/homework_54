@@ -35,3 +35,14 @@ def p_update_view(request: WSGIRequest, pk):
     product.image = request.POST.get('image')
     product.save()
     return redirect('product_detail', pk=product.pk)
+
+
+def delete_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('index')
+    context = {
+        'product': product,
+    }
+    return render(request, 'delete_product.html', context)

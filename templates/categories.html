@@ -10,6 +10,7 @@
         {% for category in categories %}
             <div class="alert alert-light" role="alert">
                 {{ category.name }} <a href="{% url 'category_update' pk=category.pk %}"><button type="submit" class="btn btn-primary">Edit</button></a>
+            <a href="{% url 'category_delete' pk=category.pk %}"><button type="submit" class="btn btn-primary">Delete</button></a>
             </div>
         {% endfor %}
     </div>
